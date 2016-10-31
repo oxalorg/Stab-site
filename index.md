@@ -25,8 +25,24 @@ Start blogging w/ this Simple static blog generator.
 
         git clone https://github.com/oxalorg/stab-site
 
+
+***Write some posts***:
+
+* All your markdown posts go inside `./blog` directory.
+* They must have valid ***yaml frontmatter*** as required
+  by your templates.
+* The one in this repo only required a `title` and `date`
+  values.
+* Find examples in the `./blog` directory of this repo.
+
+Then build the site with
+
+```
+$ stab
+```
+
 That's it. If you've ever used another static site generator,
-this should be enough for you to get startedand build.
+this should be enough for you to get started and build.
 
 If you're still not convinced of how easy this is, head over
 to the [docs](docs). I'll be posting a series of concise
@@ -44,3 +60,4 @@ page is the best place for any questions, queries and issues.
 
 Show some <3, star the project on
 [GitHub](https://github.com/oxalorg/Stab).
+
