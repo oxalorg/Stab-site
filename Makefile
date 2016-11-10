@@ -1,18 +1,19 @@
 MD=$(shell find . -iname "*.md" -not -path '*_layouts*')
 HTML=$(MD:.md=.html)
 
-.PHONY = clean backup deploy
+.PHONY = clean backup deploy all
 clean:
 	@-/bin/rm $(HTML) 2>/dev/null
 
 backup:
-	tar --exclude=backup.tar.gz --exclude=.git/ \
+	tar --exclude=backups --exclude=.git/ \
 		--exclude=venv/ --exclude=__pycache__/ \
-		-czvf backup.tar.gz ./
+		-czvf backups/backup_`date +%F`.tar.gz ./
+
+
+all:
+	../../stab/stab/stab.py
 
 deploy:
-	./stab.py && \
-	rsync -avz --exclude '_*' --exclude '.git*' \
-		--exclude 'venv*' --exclude '*.md' \
-		`pwd`/ oxal:/var/www/oxal.org/stab/ && \
-	$(MAKE) clean
+	cd ..
+	surge .
