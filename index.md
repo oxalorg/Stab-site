@@ -5,30 +5,40 @@ layout: index
 
 Start blogging w/ this Simple static blog generator.
 
-***Some features***:
-
-* 82 lines of code.
+* 88 lines of code.
 * ***EASY*** to use. 
-  
-  *Got fed up of the complexity of `jekyll`, `pelican` and
-   other complex softwares for such an easy task.*
+* Content/markdown format compatible with Jekyll and other
+  static generators.
+
+I wrote this because I got fed up of the complexity and slowness
+of `jekyll`, `pelican`, and other such static generators.
 
 ## Quick start
 
-***Setup***:
+```sh
+# This is the default template to start with
+git clone https://github.com/oxalorg/Stab-site/
 
-1. Install
+# Create a virtualenv if you wish to
+# virtualenv venv
+# source venv/bin/activate
 
-        pip3 install stab
+# Install `stab` from pypi
+pip3 install stab
 
-2. Clone the source of this site as a base to build upon.
+# Now you can traverse the folder to learn how stab works
+# It's very intuitive, to know more go to docs
 
-        git clone https://github.com/oxalorg/stab-site
+# Build site using
+stab .
+# or alternatively
+# stab /path/to/folder
+```
 
+## Slowstart
 
 ***Write some posts***:
 
-* All your markdown posts go inside `./blog` directory.
 * They must have valid ***yaml frontmatter*** as required
   by your templates.
 * The one in this repo only required a `title` and `date`
